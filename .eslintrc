@@ -1,0 +1,54 @@
+{
+  "env": {
+    "es6": true,
+    "node":  true
+  },
+  "extends": ["eslint:recommended","plugin:vue/recommended"],
+  "plugins": ["vue"],
+  "globals": {
+    "ENV_OCTICONS": true
+  },
+  "rules": {
+    "no-unused-vars": ["error", {
+      "argsIgnorePattern": "^response|^error"
+      }],
+    "quotes": ["error", "single"],
+    "semi": [2, "never"],
+    "no-console": ["error", { "allow": ["warn", "error", "log"] }],
+    "vue/return-in-computed-property": [2],
+    "vue/no-duplicate-attributes": [2],
+    "vue/attribute-hyphenation": [2, "always"],
+    "vue/max-attributes-per-line": [
+      2,
+      {
+        "singleline": 7,
+        "multiline": {
+          "max": 1,
+          "allowFirstLine": false
+        }
+      }
+    ],
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          "void": "never",
+          "normal": "always",
+          "component": "any"
+        },
+        "svg": "always",
+        "math": "always"
+      }
+    ]
+  },
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  }
+}
